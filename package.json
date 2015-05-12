@@ -1,0 +1,27 @@
+{
+  "name": "deloitte-digital",
+  "version": "1.0.0",
+  "description": "I’ve been asked to develop a responsive website for a clothing retailer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ErikAGriffin/deloitte-digital"
+  },
+  "author": "Erik Griffin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErikAGriffin/deloitte-digital/issues"
+  },
+  "homepage": "https://github.com/ErikAGriffin/deloitte-digital",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "bower": "^1.4.1",
+    "express": "^4.12.3",
+    "express-session": "^1.11.2",
+    "mongodb": "^2.0.31",
+    "mongojs": "^0.18.2"
+  }
+}
