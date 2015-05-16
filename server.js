@@ -18,12 +18,6 @@
   var bodyParser = require('body-parser');
   app.use(bodyParser.urlencoded({'extended':'true'}));
 
-  // -- Database --
-  // - Perhaps consider mocking to file system.. -
-
-  var mongojs = require('mongojs');
-  var db = mongojs((process.env.MONGOLAB_URI || 'deloitte-digital-development'), ['products']);
-
   server.listen(port, function(){
     console.log("Listening on server port " + port);
   });
