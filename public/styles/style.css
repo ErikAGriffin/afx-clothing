@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Champagne & Limousines';
+  src: local('Champagne & Limousines'), url('styles/Champagne & Limousines.woff') format('woff');
+}
+
+body {
+
+}
+
+div .pure-img {
+  margin: 0 auto;
+  padding: 0 0.4em;
+}
+
+nav {
+  border-bottom:3px solid black;
+  text-align: center;
+  margin: 0 0.4em;
+}
+
+ul {
+  text-align: center;
+}
+
+li {
+  display:inline-block;
+}
+nav li {
+  font-size:3.5em;
+}
+
+ul li {
+  font-size:1.9em;
+}
+
+.pure-g [class *= "pure-u"] a {
+  font-family:"Champagne & Limousines","Lucida Grande", sans-serif;
+}

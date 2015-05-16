@@ -5,6 +5,7 @@
   var server = require('http').createServer(app);
   var root = __dirname + '/public/';
   var views = root + '/views/';
+  app.use(express.static(root));
 
   var port = process.env.PORT || 3000;
 
@@ -23,7 +24,7 @@
   });
 
   app.get('/', function(req,res) {
-    res.sendFile(views+'index.html');
+    res.sendFile(views+'home.html');
   });
 
 
