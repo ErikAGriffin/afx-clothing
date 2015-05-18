@@ -9,6 +9,9 @@
 
   var port = process.env.PORT || 3000;
 
+  // using FileSystem instead of Database
+  var fs = require('fs');
+
   var session = require('express-session');
   var genuuid = require('./src/uuid');
   app.use(session({
@@ -26,6 +29,24 @@
   app.get('/', function(req,res) {
     res.sendFile(views+'home.html');
   });
+
+  app.post('/products', function(req, res) {
+    fs.readFile('./products.json','utf-8', function(err,data) {
+      if (err) {console.log('err fetching products\n'+err);}
+      res.json(JSON.parse(data));
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
 
 
 }());

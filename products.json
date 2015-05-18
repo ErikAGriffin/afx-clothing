@@ -12,6 +12,9 @@
         },
         "discount": {
             "Patent Black": 0
+        },
+        "color-thumbs": {
+            "Patent Black": "#000000"
         }
     },
     {
@@ -27,6 +30,9 @@
         },
         "discount": {
             "Blue": 0
+        },
+        "color-thumbs": {
+            "Blue": "#0033CC"
         }
     },
     {
@@ -42,6 +48,9 @@
         },
         "discount": {
             "Tan": 0
+        },
+        "color-thumbs": {
+            "Tan": "#FFFFCC"
         }
     },
     {
@@ -60,6 +69,10 @@
         "discount": {
             "Red": 0,
             "Blue": 0
+        },
+        "color-thumbs": {
+            "Red": "#FF0000",
+            "Blue": "#0000FF"
         }
     },
     {
@@ -75,6 +88,9 @@
         },
         "discount": {
             "Black": 0
+        },
+        "color-thumbs": {
+            "Black": "#000000"
         }
     },
     {
@@ -90,6 +106,9 @@
         },
         "discount": {
             "Medium Red": 0
+        },
+        "color-thumbs": {
+            "Medium Red": "#FF5050"
         }
     },
     {
@@ -108,6 +127,10 @@
         "discount": {
             "Grey": 0,
             "Green": 10
+        },
+        "color-thumbs": {
+            "Grey": "#D4D4D4",
+            "Green": "#00CC00"
         }
     },
     {
@@ -123,6 +146,9 @@
         },
         "discount": {
             "Charcoal": 0
+        },
+        "color-thumbs": {
+            "Charcoal": "#4D4D4D"
         }
     },
     {
@@ -138,6 +164,9 @@
         },
         "discount": {
             "Deer": 0
+        },
+        "color-thumbs": {
+            "Deer": "#C4782D"
         }
     },
     {
@@ -153,6 +182,9 @@
         },
         "discount": {
             "Black": 0
+        },
+        "color-thumbs": {
+            "Black": "#000000"
         }
     },
     {
@@ -168,6 +200,9 @@
         },
         "discount": {
             "Pink": 0
+        },
+        "color-thumbs": {
+            "Pink": "#FF3399"
         }
     }
 ]

@@ -9,7 +9,18 @@ body {
 
 div .pure-img {
   margin: 0 auto;
-  padding: 0 0.4em;
+}
+
+header section {
+  font-weight: bold;
+  padding: 0.4em;
+}
+
+.count {
+  background: black;
+  color:white;
+  border-radius:300px;
+  padding: 0.4em 0.6em;
 }
 
 nav {
@@ -20,6 +31,7 @@ nav {
 
 ul {
   text-align: center;
+  padding:0;
 }
 
 li {
@@ -35,4 +47,14 @@ ul li {
 
 .pure-g [class *= "pure-u"] a {
   font-family:"Champagne & Limousines","Lucida Grande", sans-serif;
+}
+
+main {
+  background:red;
+}
+
+main section li {
+
+  background:blue;
+
 }
