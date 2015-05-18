@@ -20,7 +20,7 @@ header section {
   background: black;
   color:white;
   border-radius:300px;
-  padding: 0.4em 0.6em;
+  padding: 0.4em 0.6em 0.3em 0.6em;
 }
 
 nav {
@@ -54,19 +54,19 @@ main {
 }
 
 /* Square Grid */
-main section li {
+.product-row li {
   background:blue;
   display: inline-block;
   position:relative;
 }
 
-main section li:before {
+.product-row li:before {
   content: '';
   display: block;
   margin-top: 100%;
 }
 
-main section li .product-box {
+.product-box {
   background: cyan;
   position: absolute;
   top: 0;
@@ -74,3 +74,39 @@ main section li .product-box {
   bottom: 0;
   left: 0;
 }
+
+.product-box h3 {
+  color:white;
+  background:black;
+  margin:0;
+  padding: 0.5em;
+}
+
+.box-left, .box-right {
+  background: green;
+  width: 50%;
+  position: absolute;
+  right:0;
+  text-align:center;
+  height:100%;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.product-box:hover .box-left, .product-box:hover .box-right {
+  width:30%;
+}
+
+.box-left:hover, .box-right:hover {
+  width:70% !important;
+}
+
+.box-left {
+  background:yellow;
+  right:initial;
+  left:0;
+}
+.
