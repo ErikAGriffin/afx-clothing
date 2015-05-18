@@ -74,6 +74,7 @@ main {
   bottom: 0;
   left: 0;
   overflow:hidden;
+  /*height: calc(100% - 3.8em);*/
 }
 
 .product-box h3 {
@@ -82,17 +83,18 @@ main {
   margin:0;
   padding: 0.5em;
   opacity: 100;
-  -webkit-transition: all 0.25s linear;
-  -moz-transition: all 0.25s linear;
-  -ms-transition: all 0.25s linear;
-  -o-transition: all 0.25s linear;
-  transition: all 0.25s linear;
+  height: 2em;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
 }
 
 .product-box:hover h3 {
+  padding:0;
   opacity:0;
   height:0;
-  padding:0;
 }
 
 .box-left, .box-right {
@@ -102,11 +104,15 @@ main {
   right:0;
   text-align:center;
   height:100%;
-  -webkit-transition: all 0.15s linear;
-  -moz-transition: all 0.15s linear;
-  -ms-transition: all 0.15s linear;
-  -o-transition: all 0.15s linear;
-  transition: all 0.15s linear;
+  -webkit-transition: all 250ms linear;
+  -moz-transition: all 250ms linear;
+  -ms-transition: all 250ms linear;
+  -o-transition: all 250ms linear;
+  transition: all 250ms linear;
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  transition-delay: 500ms;
 }
 
 .product-content img {
@@ -124,6 +130,7 @@ main {
 }
 
 .box-left {
+  background:yellow;
   right:initial;
   left:0;
 }

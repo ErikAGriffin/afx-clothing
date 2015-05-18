@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="components/angular/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/fetch.js"></script>
   </head>
   <body>
 
@@ -48,36 +49,19 @@
 
       <main ng-controller="ProductsController as productsCtrl">
         <section class="pure-g product-row">
-          <li class="pure-u-1 pure-u-xs-1-2 pure-u-sm-1-3 pure-u-md-1-4 pure-u-lg-1-5">
+          <li ng-repeat="product in productsCtrl.products" class="pure-u-1 pure-u-xs-1-2 pure-u-sm-1-3 pure-u-md-1-4 pure-u-lg-1-5">
             <div class="product-box">
-              <h3>Almond Toe Court Shoes</h3>
+              <h3>{{product.name}}</h3>
               <div class="product-content">
                 <div class="box-left">
                   <img ng-src="images/almond-toe-black.jpg" />
                 </div>
                 <div class="box-right">
-                  $44.99
+                  {{product.price | currency:"&pound;"}}
                 </div>
               </div>
             </div>
           </li>
-          <li class="pure-u-1 pure-u-xs-1-2 pure-u-sm-1-3 pure-u-md-1-4 pure-u-lg-1-5">
-            <div class="product-box">
-              Summer Nights
-            </div>
-          </li>
-          <li class="pure-u-1 pure-u-xs-1-2 pure-u-sm-1-3 pure-u-md-1-4 pure-u-lg-1-5">
-            <div class="product-box">
-              Summer Nights
-            </div>
-          </li>
-          <li class="pure-u-1 pure-u-xs-1-2 pure-u-sm-1-3 pure-u-md-1-4 pure-u-lg-1-5">
-            <div class="product-box">
-              Summer Nights
-            </div>
-          </li>
-
-
         </section>
       </main>
 
