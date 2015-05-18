@@ -73,6 +73,7 @@ main {
   right: 0;
   bottom: 0;
   left: 0;
+  overflow:hidden;
 }
 
 .product-box h3 {
@@ -89,23 +90,22 @@ main {
   right:0;
   text-align:center;
   height:100%;
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  -ms-transition: all 0.1s linear;
-  -o-transition: all 0.1s linear;
-  transition: all 0.1s linear;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
 }
 
-.product-box:hover .box-left, .product-box:hover .box-right {
-  width:30%;
+.product-content:hover .box-left, .product-content:hover .box-right {
+  width:10%;
 }
 
 .box-left:hover, .box-right:hover {
-  width:70% !important;
+  width:90% !important;
 }
 
 .box-left {
-  background:yellow;
   right:initial;
   left:0;
 }
