@@ -53,8 +53,24 @@ main {
   background:red;
 }
 
+/* Square Grid */
 main section li {
-
   background:blue;
+  display: inline-block;
+  position:relative;
+}
 
+main section li:before {
+  content: '';
+  display: block;
+  margin-top: 100%;
+}
+
+main section li .product-box {
+  background: cyan;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
