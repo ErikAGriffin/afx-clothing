@@ -83,6 +83,10 @@ main {
   padding: 0.5em;
 }
 
+.product-box:hover h3 {
+  display:none;
+}
+
 .box-left, .box-right {
   background: green;
   width: 50%;
@@ -97,12 +101,18 @@ main {
   transition: all 0.15s linear;
 }
 
+.product-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .product-content:hover .box-left, .product-content:hover .box-right {
-  width:10%;
+  width:25%;
 }
 
 .box-left:hover, .box-right:hover {
-  width:90% !important;
+  width:75% !important;
 }
 
 .box-left {
