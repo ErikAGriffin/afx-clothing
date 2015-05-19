@@ -13,8 +13,11 @@
         "discount": {
             "Patent Black": 0
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Patent Black": "#000000"
+        },
+        "productThumbs": {
+            "Patent Black": "images/wom-almond-toe-shoes-patent-black.jpg"
         }
     },
     {
@@ -31,8 +34,11 @@
         "discount": {
             "Blue": 0
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Blue": "#0033CC"
+        },
+        "productThumbs": {
+            "Blue": "images/wom-suede-shoes-blue.jpg"
         }
     },
     {
@@ -49,8 +55,11 @@
         "discount": {
             "Tan": 0
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Tan": "#FFFFCC"
+        },
+        "productThumbs": {
+            "Tan": "images/men-saddle-loafers-tan.jpg"
         }
     },
     {
@@ -70,9 +79,13 @@
             "Red": 0,
             "Blue": 0
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Red": "#FF0000",
             "Blue": "#0000FF"
+        },
+        "productThumbs": {
+            "Red": "images/men-flip-flop-red.jpg",
+            "Blue": "images/men-flip-flop-blue.jpg"
         }
     },
     {
@@ -89,8 +102,11 @@
         "discount": {
             "Black": 0
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Black": "#000000"
+        },
+        "productThumbs": {
+            "Black": "images/wom-gold-cardigan-black.jpg"
         }
     },
     {
@@ -107,8 +123,11 @@
         "discount": {
             "Medium Red": 0
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Medium Red": "#FF5050"
+        },
+        "productThumbs": {
+            "Medium Red": "images/wom-cotton-shorts-medium-red.jpg"
         }
     },
     {
@@ -128,9 +147,13 @@
             "Grey": 0,
             "Green": 10
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Grey": "#D4D4D4",
             "Green": "#00CC00"
+        },
+        "productThumbs": {
+            "Grey": "images/men-stripe-shirt-grey.jpg",
+            "Green": "images/men-stripe-shirt-green.jpg"
         }
     },
     {
@@ -147,8 +170,11 @@
         "discount": {
             "Charcoal": 0
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Charcoal": "#4D4D4D"
+        },
+        "productThumbs": {
+            "Charcoal": "images/men-sharkskin-waistcoat-charcoal.jpg"
         }
     },
     {
@@ -165,8 +191,11 @@
         "discount": {
             "Deer": 0
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Deer": "#C4782D"
+        },
+        "productThumbs": {
+            "Deer": "images/men-pocket-blazer-deer.jpg"
         }
     },
     {
@@ -183,8 +212,11 @@
         "discount": {
             "Black": 0
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Black": "#000000"
+        },
+        "productThumbs": {
+            "Black": "images/wom-bird-dress-black.jpg"
         }
     },
     {
@@ -201,8 +233,11 @@
         "discount": {
             "Pink": 0
         },
-        "color-thumbs": {
+        "colorThumbs": {
             "Pink": "#FF3399"
+        },
+        "productThumbs": {
+            "Pink": "images/wom-mid-twist-dress-pink.jpg"
         }
     }
 ]
