@@ -18,6 +18,11 @@
   <body ng-controller="ProductsController as productsCtrl">
 
       <template>
+        NEXT: TO CLEAN UP ANIMATIONS AND DIV's IN PRODUCT BOXES
+
+        Changed hover functionality.  Want to make it so image
+        only enlarges when IMG is hovered and not container.
+
         While the shift left right is interesting, I would
       rather have an immediate disapperance of the title as works
       now, and immediate enlargement of price or some other item,
@@ -85,6 +90,7 @@
               <div class="product-content">
                 <div class="box-left">
                   <img  ng-repeat="color in product.colors" ng-show="productsCtrl.showByColor(product,color)" ng-src="{{product.productThumbs[color]}}" />
+                  <div class="dont-move"></div>
                 </div>
                 <div class="box-right">
                   <p ng-show="productsCtrl.showByColor(product,color)" ng-repeat="color in product.colors">

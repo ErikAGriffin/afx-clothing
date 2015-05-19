@@ -107,15 +107,16 @@ main {
   position: absolute;
   right:0;
   height:100%;
-  -webkit-transition: all 250ms linear;
-  -moz-transition: all 250ms linear;
-  -ms-transition: all 250ms linear;
-  -o-transition: all 250ms linear;
-  transition: all 250ms linear;
-  -webkit-transition-delay: 500ms;
-  -moz-transition-delay: 500ms;
-  -o-transition-delay: 500ms;
-  transition-delay: 500ms;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+  -webkit-transition-delay: 300ms;
+  -moz-transition-delay: 300ms;
+  -ms-transition-delay: 300ms;
+  -o-transition-delay: 300ms;
+  transition-delay: 300ms;
 }
 
 .product-content img {
@@ -123,6 +124,27 @@ main {
   height: auto;
   display: block;
 }
+
+.product-content:hover .box-right {
+  width:10%;
+}
+
+.box-left:hover {
+  width:90%;
+}
+
+.box-right:hover {
+  width:50% !important;
+}
+
+.box-left {
+  /*width:100%;*/
+  right:initial;
+  left:0;
+  background:red;
+}
+
+/* Product Info */
 
 .color-thumb {
   display:block;
@@ -134,17 +156,3 @@ main {
   text-decoration: line-through;
   color: #878787;
 }
-
-.product-content:hover .box-left, .product-content:hover .box-right {
-  width:25%;
-}
-
-.box-left:hover, .box-right:hover {
-  width:75% !important;
-}
-
-.box-left {
-  right:initial;
-  left:0;
-}
-.
