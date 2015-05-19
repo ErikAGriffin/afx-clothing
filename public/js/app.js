@@ -15,14 +15,20 @@
       product.activeColor = color;
     };
 
-    self.activeFilter = [false,false];
-    self.subFilter = false;
+    self.resetFilter = function() {
 
-    self.filterBy = function(filter) {
-      if (!self.subFilter) {self.activeFilter = false;}
     };
 
-    self.isShownProduct = function(product) {
+    self.filterByMen = function(filter) {
+
+    };
+
+    self.filterByWomen = function(filter) {
+
+    };
+
+    self.isProductShown = function(product) {
+      return true;
     };
 
     var setActiveColor = function(productsArray) {
