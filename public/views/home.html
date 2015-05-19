@@ -100,8 +100,12 @@
                     <span ng-show="product.discount[color]">
                       {{product.price - product.discount[color] | currency:"&pound;"}}
                     </span>
+                    <span ng-hide="product.discount[color]">&nbsp;</span>
                   </p>
-                  <a ng-repeat="color in product.colors" class="color-thumb" ng-click="productsCtrl.activateColor(product,color)" title="{{color}}" ng-style="{'background':product.colorThumbs[color]}"></a>
+                  <p>
+                    <span>Color:</span>
+                    <a ng-repeat="color in product.colors" class="color-thumb" ng-click="productsCtrl.activateColor(product,color)" title="{{color}}" ng-style="{'background':product.colorThumbs[color]}"></a>
+                  </p>
                 </div>
               </div>
             </div>
