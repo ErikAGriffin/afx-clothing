@@ -7,9 +7,19 @@
 
     self.products = [];
 
+    self.activateColor = function(product,color) {
+      product.activeColor = color;
+    }
+
+    var setActiveColor = function(productsArray) {
+      for (var product of productsArray) {
+        product.activeColor = product.colors[0];
+      }
+    };
+
     $http.post('/products').success(function(data,status) {
       self.products = data;
-      console.log(self.products[9]);
+      setActiveColor(self.products);
     })
     .error(function(){
       console.log('error fetching products');

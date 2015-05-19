@@ -67,11 +67,11 @@
               <h3>{{product.name}}</h3>
               <div class="product-content">
                 <div class="box-left">
-                  <img  ng-repeat="color in product.colors" ng-src="{{product.productThumbs[color]}}" />
+                  <img  ng-repeat="color in product.colors" ng-show="color===product.activeColor" ng-src="{{product.productThumbs[color]}}" />
                 </div>
                 <div class="box-right">
                   {{product.price | currency:"&pound;"}}
-                  <a ng-repeat="color in product.colors" class="color-thumb" ng-click="" title="{{color}}" ng-style="{'background':product.colorThumbs[color]}"></a>
+                  <a ng-repeat="color in product.colors" class="color-thumb" ng-click="productsCtrl.activateColor(product,color)" title="{{color}}" ng-style="{'background':product.colorThumbs[color]}"></a>
                 </div>
               </div>
             </div>
