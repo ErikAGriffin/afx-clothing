@@ -70,7 +70,14 @@
                   <img  ng-repeat="color in product.colors" ng-show="color===product.activeColor" ng-src="{{product.productThumbs[color]}}" />
                 </div>
                 <div class="box-right">
-                  {{product.price | currency:"&pound;"}}
+                  <p ng-show="color===product.activeColor" ng-repeat="color in product.colors">
+                    <span ng-class="{discounted:product.discount[color]}">
+                      {{product.price | currency:"&pound;"}}
+                    </span>
+                    <span ng-show="product.discount[color]">
+                      {{product.price - product.discount[color] | currency:"&pound;"}}
+                    </span>
+                  </p>
                   <a ng-repeat="color in product.colors" class="color-thumb" ng-click="productsCtrl.activateColor(product,color)" title="{{color}}" ng-style="{'background':product.colorThumbs[color]}"></a>
                 </div>
               </div>

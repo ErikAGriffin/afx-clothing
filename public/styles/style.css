@@ -122,10 +122,14 @@ main {
 }
 
 .color-thumb {
-  background:red;
   display:block;
   width:1em;
   height:1em;
+}
+
+.discounted {
+  text-decoration: line-through;
+  color: #878787;
 }
 
 .product-content:hover .box-left, .product-content:hover .box-right {
