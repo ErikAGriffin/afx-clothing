@@ -7,6 +7,10 @@ body {
 
 }
 
+a[ng-click] {
+  cursor:pointer;
+}
+
 div .pure-img {
   margin: 0 auto;
 }
@@ -50,12 +54,10 @@ ul li {
 }
 
 main {
-  background:red;
 }
 
 /* Square Grid */
 .product-row li {
-  background:blue;
   display: inline-block;
   position:relative;
 }
@@ -67,7 +69,6 @@ main {
 }
 
 .product-box {
-  background: cyan;
   position: absolute;
   top: 0;
   right: 0;
@@ -98,7 +99,6 @@ main {
 }
 
 .box-left, .box-right {
-  background: green;
   width: 50%;
   position: absolute;
   right:0;
@@ -121,6 +121,13 @@ main {
   display: block;
 }
 
+.color-thumb {
+  background:red;
+  display:block;
+  width:1em;
+  height:1em;
+}
+
 .product-content:hover .box-left, .product-content:hover .box-right {
   width:25%;
 }
@@ -130,7 +137,6 @@ main {
 }
 
 .box-left {
-  background:yellow;
   right:initial;
   left:0;
 }
