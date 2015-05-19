@@ -7,12 +7,27 @@
 
     self.products = [];
 
+    self.showByColor = function(product, color) {
+      return product.activeColor === color;
+    };
+
     self.activateColor = function(product,color) {
       product.activeColor = color;
-    }
+    };
+
+    self.activeFilter = [false,false];
+    self.subFilter = false;
+
+    self.filterBy = function(filter) {
+      if (!self.subFilter) {self.activeFilter = false;}
+    };
+
+    self.isShownProduct = function(product) {
+    };
 
     var setActiveColor = function(productsArray) {
-      for (var product of productsArray) {
+      for (var i=0;i<productsArray.length;i++) {
+        var product = productsArray[i];
         product.activeColor = product.colors[0];
       }
     };
@@ -20,7 +35,7 @@
     $http.post('/products').success(function(data,status) {
       self.products = data;
       setActiveColor(self.products);
-      console.log(self.products[3]);
+      console.log(self.products);
     })
     .error(function(){
       console.log('error fetching products');
