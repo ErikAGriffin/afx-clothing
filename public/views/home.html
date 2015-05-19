@@ -17,20 +17,8 @@
   </head>
   <body ng-controller="ProductsController as productsCtrl">
 
-      <template>
-        NEXT: TO CLEAN UP ANIMATIONS AND DIV's IN PRODUCT BOXES
-
-        Changed hover functionality.  Want to make it so image
-        only enlarges when IMG is hovered and not container.
-
-        While the shift left right is interesting, I would
-      rather have an immediate disapperance of the title as works
-      now, and immediate enlargement of price or some other item,
-      and a 500ms delay on an inplace enlargement of the entire
-      product box.
-      May be tricky with items on the edges..
-      Ah. the immediate hover reveals the 'add to
-      cart' button.
+    <template>
+      Notes.
     </template>
 
 
@@ -106,9 +94,10 @@
                     <span>Color:</span>
                     <a ng-repeat="color in product.colors" class="color-thumb" ng-click="productsCtrl.activateColor(product,color)" title="{{color}}" ng-style="{'background':product.colorThumbs[color]}"></a>
                   </p>
-                </div>
-              </div>
-            </div>
+                  <span class="cart-add">Add to cart</span>
+                </div> <!-- .box-right -->
+              </div> <!-- .product-content -->
+            </div> <!-- .product-box -->
           </li>
         </section>
       </main>

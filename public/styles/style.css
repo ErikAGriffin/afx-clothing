@@ -94,6 +94,11 @@ main {
   -ms-transition: all 200ms linear;
   -o-transition: all 200ms linear;
   transition: all 200ms linear;
+  -webkit-transition-delay: 450ms;
+  -moz-transition-delay: 450ms;
+  -ms-transition-delay: 450ms;
+  -o-transition-delay: 450ms;
+  transition-delay: 450ms;
 }
 
 .product-box:hover h3 {
@@ -107,6 +112,7 @@ main {
   position: absolute;
   right:0;
   height:100%;
+  white-space: nowrap;
   -webkit-transition: all 200ms ease-in;
   -moz-transition: all 200ms ease-in;
   -ms-transition: all 200ms ease-in;
@@ -164,4 +170,10 @@ main {
 .box-right span {
   display:block;
   margin: 0.1em 0;
+}
+
+.cart-add {
+  position: absolute;
+  bottom:1em;
+  left: 0;
 }
