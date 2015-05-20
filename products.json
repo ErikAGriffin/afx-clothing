@@ -1,5 +1,6 @@
 [
     {
+        "productID": "10f10a5",
         "name": "Almond Toe Court Shoes",
         "colors": [
             "Patent Black"
@@ -21,6 +22,7 @@
         }
     },
     {
+        "productID": "f0c621d",
         "name": "Suede Shoes",
         "colors": [
             "Blue"
@@ -42,6 +44,7 @@
         }
     },
     {
+        "productID": "3750e34",
         "name": "Leather Driver Saddle Loafers",
         "colors": [
             "Tan"
@@ -63,6 +66,7 @@
         }
     },
     {
+        "productID": "d820bac",
         "name": "Flip Flops",
         "colors": [
             "Red",
@@ -89,6 +93,7 @@
         }
     },
     {
+        "productID": "47a00bf",
         "name": "Gold Button Cardigan",
         "colors": [
             "Black"
@@ -110,6 +115,7 @@
         }
     },
     {
+        "productID": "375b12e",
         "name": "Cotton Shorts",
         "colors": [
             "Medium Red"
@@ -131,6 +137,7 @@
         }
     },
     {
+        "productID": "b273abf",
         "name": "Fine Stripe Short Sleeve Shirt",
         "colors": [
             "Grey",
@@ -157,6 +164,7 @@
         }
     },
     {
+        "productID": "20b16fe",
         "name": "Sharkskin Waistcoat",
         "colors": [
             "Charcoal"
@@ -178,6 +186,7 @@
         }
     },
     {
+        "productID": "f037b39",
         "name": "Lightweight Patch Pocket Blazer",
         "colors": [
             "Deer"
@@ -199,6 +208,7 @@
         }
     },
     {
+        "productID": "b083271",
         "name": "Bird Print Dress",
         "colors": [
             "Black"
@@ -220,6 +230,7 @@
         }
     },
     {
+        "productID": "03e8af1",
         "name": "Mid Twist Cut-Out Dress",
         "colors": [
             "Pink"
