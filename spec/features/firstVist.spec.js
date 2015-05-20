@@ -3,6 +3,7 @@ describe('First Visit to AFX', function() {
   // var shoppingCart = element(by.model('cart'));
 
   var titles = element.all(by.binding('product.name'));
+  var afxLogo = $('img[src="images/logo.png"]');
   var mens = element(by.cssContainingText('a', 'Men'));
   var womens = element(by.cssContainingText('a','Women'));
   var mensFormal = $('a[ng-click="productsCtrl.filterByMen(\'Formalwear\')"]');
@@ -39,8 +40,6 @@ describe('First Visit to AFX', function() {
   // female items, without adding unnecessary html to the page
 
   it('Will filter products by gender', function() {
-    expect(titles.get(0).isDisplayed()).toBeTruthy();
-    expect(titles.get(2).isDisplayed()).toBeTruthy();
     mens.click();
     expect(titles.get(0).isDisplayed()).toBeFalsy();
     expect(titles.get(2).isDisplayed()).toBeTruthy();
@@ -63,6 +62,13 @@ describe('First Visit to AFX', function() {
     womensFootwear.click();
     expect(titles.get(0).isDisplayed()).toBeTruthy();
     expect(titles.get(2).isDisplayed()).toBeFalsy();
+  });
+
+  it('Filter will reset when clicking AFX logo', function() {
+    hoverOver(mens);
+    mensFormal.click();
+    afxLogo.click();
+    expect(titles.get(0).isDisplayed()).toBeTruthy();
   });
 
 
