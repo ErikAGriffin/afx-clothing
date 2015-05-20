@@ -21,5 +21,8 @@
     "bower": "^1.4.1",
     "express": "^4.12.3",
     "express-session": "^1.11.2"
+  },
+  "devDependencies": {
+    "protractor": "^2.0.0"
   }
 }
