@@ -7,6 +7,10 @@
 
     self.products = [];
 
+    self.cart = [];
+
+    // --- Choosing Product Color ---
+
     self.showByColor = function(product, color) {
       return product.activeColor === color;
     };
@@ -14,6 +18,8 @@
     self.activateColor = function(product,color) {
       product.activeColor = color;
     };
+
+    // --- Filtering Products ---
 
     self.showMenOptions = false;
     self.showWomenOptions = false;
@@ -66,6 +72,37 @@
       }
     };
 
+    // --- Shopping Cart ---
+
+    self.addToCart = function(product) {
+      var cartObject = {
+        productID: product.productID,
+        color: product.activeColor,
+        quantity: 1
+      };
+      self.cart.push(cartObject);
+      // Send to server.
+      // So, so ugly angular.
+      $http({
+        url:'/addToCart',
+        method: "POST",
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        transformRequest: function(obj) {
+          var str = [];
+          for (var p in obj) {
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+          }
+          return str.join("&");
+        },
+        data: cartObject
+      })
+      .error(function(data,status) {
+        console.log(status+": Error adding item to cart.\n"+data);
+      });
+    };
+
+    // --- Fetching All Products ---
+
     var setActiveColor = function(productsArray) {
       for (var i=0;i<productsArray.length;i++) {
         var product = productsArray[i];
@@ -73,6 +110,7 @@
       }
     };
 
+    // make service?
     $http.post('/products').success(function(data,status) {
       self.products = data;
       setActiveColor(self.products);

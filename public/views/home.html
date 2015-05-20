@@ -22,6 +22,22 @@
 
       To add animation to clothing options on gender hover,
       I could add and remove a class that animates opacity.
+
+      I will have to methods, one to add a new item to cart,
+      and another to simply update quantity.
+      Angular will use the stock to determine where and items
+      quantity can be updated, or it can be added to the cart
+      in the first place. However the server will have some
+      error checking in place as well.
+
+      Instead of setting quantity from main page, you will simply either
+      add or a remove an item.
+
+      - Change initial fetch of products to also fetch user cart.
+      - Animate gender hover.
+      - Angular change add link on already added items
+      - Angular change add link on out of stock items
+      - Add shopping cart to html.
     </template>
 
 
@@ -97,7 +113,9 @@
                     <span>Color:</span>
                     <a ng-repeat="color in product.colors" class="color-thumb" ng-click="productsCtrl.activateColor(product,color)" title="{{color}}" ng-style="{'background':product.colorThumbs[color]}"></a>
                   </p>
-                  <span class="cart-add">Add to cart</span>
+                  <span class="cart-add">
+                    <a ng-click="productsCtrl.addToCart(product)">Add to cart</a>
+                  </span>
                 </div> <!-- .box-right -->
               </div> <!-- .product-content -->
             </div> <!-- .product-box -->
