@@ -113,8 +113,9 @@
                     <a ng-repeat="color in product.colors" class="color-thumb" ng-click="productsCtrl.activateColor(product,color)" title="{{color}}" ng-style="{'background':product.colorThumbs[color]}"></a>
                   </p>
                   <span class="cart-add">
-                    <a ng-hide="productsCtrl.isInStock(product)" class="out-of-stock">Out of Stock</a>
-                    <a ng-show="productsCtrl.isInStock(product)" ng-click="productsCtrl.addToCart(product)">Add to cart</a>
+                    <a ng-show="product.isInCart" ng-click="productsCtrl.removeFromCart(product)">Remove from cart</a>
+                    <a ng-hide="product.isInCart || productsCtrl.canAdd(product)" class="out-of-stock">Out of Stock</a>
+                    <a ng-show="productsCtrl.canAdd(product)" ng-click="productsCtrl.addToCart(product)">Add to cart</a>
                   </span>
                 </div> <!-- .box-right -->
               </div> <!-- .product-content -->

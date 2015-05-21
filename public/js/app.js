@@ -74,12 +74,14 @@
 
     // --- Shopping Cart ---
 
-    self.isInStock = function(product) {
+    self.canAdd = function(product) {
       var color = product.activeColor;
+      if (product.isInCart) {return false;}
       return (product.stock[color] > 0);
     };
 
     self.addToCart = function(product) {
+      product.isInCart = true;
       var cartObject = {
         productID: product.productID,
         color: product.activeColor,
@@ -88,6 +90,24 @@
       self.cart.push(cartObject);
       // Send to server.
       $cart.addToCart(cartObject);
+      console.log(self.cart);
+    };
+
+    self.removeFromCart = function(product) {
+      // Array.find() not widely supported.
+      var i=0;
+      var index;
+      self.cart.filter(function(cartProduct) {
+        var idSame = cartProduct.productID === product.productID;
+        var colorSame = cartProduct.color === product.activeColor;
+        if (idSame && colorSame) {index = i;}
+        i++;
+        return (idSame && colorSame);
+      });
+      if (index >= 0) {
+        $cart.removeFromCart(self.cart.splice(index,1));
+        product.isInCart = false;
+      }
     };
 
     // --- Fetching All Products ---
