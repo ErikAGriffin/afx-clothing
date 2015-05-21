@@ -36,7 +36,6 @@
       - Change initial fetch of products to also fetch user cart.
       - Animate gender hover.
       - Angular change add link on already added items
-      - Angular change add link on out of stock items
       - Add shopping cart to html.
     </template>
 
@@ -94,13 +93,12 @@
           <li ng-show="productsCtrl.isProductShown(product)" ng-repeat="product in productsCtrl.products" class="pure-u-1 pure-u-xs-1-2 pure-u-sm-1-3 pure-u-md-1-4 pure-u-lg-1-5">
             <div class="product-box">
               <h3>{{product.name}}</h3>
-              <div class="product-content">
+              <div class="product-content" ng-show="productsCtrl.showByColor(product,color)" ng-repeat="color in product.colors">
                 <div class="box-left">
-                  <img  ng-repeat="color in product.colors" ng-show="productsCtrl.showByColor(product,color)" ng-src="{{product.productThumbs[color]}}" />
-                  <div class="dont-move"></div>
+                  <img ng-src="{{product.productThumbs[color]}}" />
                 </div>
                 <div class="box-right">
-                  <p ng-show="productsCtrl.showByColor(product,color)" ng-repeat="color in product.colors">
+                  <p>
                     <span ng-class="{discounted:product.discount[color]}">
                       {{product.price | currency:"&pound;"}}
                     </span>
@@ -114,7 +112,8 @@
                     <a ng-repeat="color in product.colors" class="color-thumb" ng-click="productsCtrl.activateColor(product,color)" title="{{color}}" ng-style="{'background':product.colorThumbs[color]}"></a>
                   </p>
                   <span class="cart-add">
-                    <a ng-click="productsCtrl.addToCart(product)">Add to cart</a>
+                    <a ng-hide="productsCtrl.isInStock(product)" class="out-of-stock">Out of Stock</a>
+                    <a ng-show="productsCtrl.isInStock(product)" ng-click="productsCtrl.addToCart(product)">Add to cart</a>
                   </span>
                 </div> <!-- .box-right -->
               </div> <!-- .product-content -->

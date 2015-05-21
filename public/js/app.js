@@ -74,6 +74,11 @@
 
     // --- Shopping Cart ---
 
+    self.isInStock = function(product) {
+      var color = product.activeColor;
+      return (product.stock[color] > 0);
+    };
+
     self.addToCart = function(product) {
       var cartObject = {
         productID: product.productID,

@@ -176,4 +176,9 @@ main {
   position: absolute;
   bottom:1em;
   left: 0;
+  font-size: 1.1em;
+}
+
+.out-of-stock {
+  color:red;
 }
