@@ -2,7 +2,7 @@
 
   var app = angular.module('afxClothing',[]);
 
-  app.controller('ProductsController',['$http',function($http){
+  app.controller('ProductsController',['$http','$cart',function($http,$cart){
     var self = this;
 
     self.products = [];
@@ -87,23 +87,7 @@
       };
       self.cart.push(cartObject);
       // Send to server.
-      // So, so ugly angular.
-      $http({
-        url:'/addToCart',
-        method: "POST",
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        transformRequest: function(obj) {
-          var str = [];
-          for (var p in obj) {
-            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-          }
-          return str.join("&");
-        },
-        data: cartObject
-      })
-      .error(function(data,status) {
-        console.log(status+": Error adding item to cart.\n"+data);
-      });
+      $cart.addToCart(cartObject);
     };
 
     // --- Fetching All Products ---
