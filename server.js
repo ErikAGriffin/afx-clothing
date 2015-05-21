@@ -20,7 +20,7 @@
   var fs = require('fs');
 
   // --- Helper Modules ---
-  var isProductUnique = require('./src/checkUniqueProduct');
+  var cartHelper = require('./src/cartHelper');
 
 
   var bodyParser = require('body-parser');
@@ -45,16 +45,16 @@
   app.post('/addtocart', function(req, res) {
     var cart = req.session.userCart;
     var newItem = req.body;
-    if (isProductUnique(cart,newItem)) {
-      cart.push(newItem);
-      console.log(req.session.userCart);
-      res.end();
-    }
-    else {
-      console.log(req.session.userCart);
-      res.status(500).end();}
+    cartHelper.addIfUnique(cart,newItem);
+    res.end();
   });
 
+  app.post('/removefromcart', function(req,res) {
+    var cart = req.session.userCart;
+    var newItem = req.body;
+    cartHelper.removeFromCart(cart,newItem);
+    res.end();
+  });
 
 
 

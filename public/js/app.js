@@ -95,18 +95,15 @@
 
     self.removeFromCart = function(product) {
       // Array.find() not widely supported.
-      var i=0;
-      var index;
-      self.cart.filter(function(cartProduct) {
+      for (var index=0;index<self.cart.length;index++) {
+        var cartProduct = self.cart[index];
         var idSame = cartProduct.productID === product.productID;
         var colorSame = cartProduct.color === product.activeColor;
-        if (idSame && colorSame) {index = i;}
-        i++;
-        return (idSame && colorSame);
-      });
-      if (index >= 0) {
-        $cart.removeFromCart(self.cart.splice(index,1));
-        product.isInCart = false;
+        if (idSame && colorSame) {
+          $cart.removeFromCart(self.cart.splice(index,1).pop());
+          product.isInCart = false;
+          break;
+        }
       }
     };
 
