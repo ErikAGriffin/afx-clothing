@@ -33,8 +33,16 @@ nav {
   margin: 0 0.4em;
 }
 
+li {
+  display:inline-block;
+}
+
 nav a {
   padding: 0.2em 0.5em;
+}
+
+nav li {
+  font-size:3.5em;
 }
 
 ul {
@@ -42,16 +50,20 @@ ul {
   padding:0;
 }
 
-li {
-  display:inline-block;
-}
-nav li {
-  font-size:3.5em;
+ul * {
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
 }
 
-ul li {
+ul li a {
   font-size:1.9em;
+  color:red;
 }
+
+
 
 .pure-g [class *= "pure-u"] a {
   font-family:"Champagne & Limousines","Lucida Grande", sans-serif;
@@ -82,6 +94,19 @@ main {
   /*height: calc(100% - 3.8em);*/
 }
 
+.product-box * {
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  -webkit-transition-delay: 450ms;
+  -moz-transition-delay: 450ms;
+  -ms-transition-delay: 450ms;
+  -o-transition-delay: 450ms;
+  transition-delay: 450ms;
+}
+
 .product-box h3 {
   color:white;
   background:black;
@@ -89,16 +114,6 @@ main {
   padding: 0.5em;
   opacity: 100;
   height: 2em;
-  -webkit-transition: all 200ms linear;
-  -moz-transition: all 200ms linear;
-  -ms-transition: all 200ms linear;
-  -o-transition: all 200ms linear;
-  transition: all 200ms linear;
-  -webkit-transition-delay: 450ms;
-  -moz-transition-delay: 450ms;
-  -ms-transition-delay: 450ms;
-  -o-transition-delay: 450ms;
-  transition-delay: 450ms;
 }
 
 .product-box:hover h3 {
@@ -113,16 +128,6 @@ main {
   right:0;
   height:100%;
   white-space: nowrap;
-  -webkit-transition: all 200ms ease-in;
-  -moz-transition: all 200ms ease-in;
-  -ms-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-  -webkit-transition-delay: 450ms;
-  -moz-transition-delay: 450ms;
-  -ms-transition-delay: 450ms;
-  -o-transition-delay: 450ms;
-  transition-delay: 450ms;
 }
 
 .product-content img {

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/style.css" />
 
     <script type="text/javascript" src="components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="components/angular-animate/angular-animate.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script tpye="text/javascript" src="js/services.js"></script>
     <!-- <script type="text/javascript" src="js/fetch.js"></script> -->
@@ -37,8 +38,15 @@
       - Change initial fetch of products to also fetch user cart.
       - Animate gender hover.
       - Add shopping cart to html.
+      - Add shopping cart quantity functions.
     </template>
 
+
+    Hello.
+    <div ng-class="{on:onOff}" class="highlight">
+      Highlight this box
+    </div>
+    <button ng-click="onOff=!onOff">Toggle</button>
 
       <header class="pure-g"  ng-mouseleave="productsCtrl.hoverClear()">
         <div class="pure-u-1 pure-u-sm-1-3" ng-mouseenter="productsCtrl.hoverClear()">
@@ -62,7 +70,7 @@
               </a>
             </li>
           </nav>
-          <ul class="pure-g" ng-show="productsCtrl.showMenOptions">
+          <ul class="pure-g categories" ng-show="productsCtrl.showMenOptions">
             <li class="pure-u-1 pure-u-sm-1-3">
               <a ng-click="productsCtrl.filterByMen('Footwear')">Footwear</a>
             </li>
@@ -73,7 +81,7 @@
               <a ng-click="productsCtrl.filterByMen('Casualwear')">Casual</a>
             </li>
           </ul>
-          <ul class="pure-g" ng-show="productsCtrl.showWomenOptions">
+          <ul class="pure-g categories" ng-show="productsCtrl.showWomenOptions">
             <li class="pure-u-1 pure-u-sm-1-3">
               <a ng-click="productsCtrl.filterByWomen('Footwear')">Footwear</a>
             </li>

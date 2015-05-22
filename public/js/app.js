@@ -1,6 +1,6 @@
 (function() {
 
-  var app = angular.module('afxClothing',[]);
+  var app = angular.module('afxClothing',['ngAnimate']);
 
   app.controller('ProductsController',['$http','$cart',function($http,$cart){
     var self = this;
