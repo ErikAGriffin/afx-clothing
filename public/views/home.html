@@ -22,24 +22,39 @@
     <template>
       Notes.
 
-      There are a few initial design choices I regret.
+      For me this was an exploration into some css animations, and eventually
+      ngAnimate.  Looking back it is much easier to use angular-animate to
+      create specialized animations than to use CSS trickery, and would have
+      influenced the core structure of my html.
 
-      The first is deciding that to give products IDs regardless
-      of color, instead of a different UUID for every possible product,
-      and the second is mocking my data in an array instead of
+      In the end, I think the product boxes are too busy but I learned how
+      much easier to get custom animations would have been if I had started with
+      ngAnimate.
+
+      There are also a few initial design choices I regret.
+
+      The first is deciding that color is independent of productID,
+      that is instead of a different UUID for every possible product,
+      each name is unique and may have multiple colors.
+      The second is mocking my data in an array instead of
       a hash with product id's as keys.
 
       The combination of these two flaws led to nested loops
       (O n^2) as well as the pain of having to constantly consider
-      color when dealing with objects.
+      which to use color when dealing with objects.
 
-      Another cause of some headache was creating smaller child objects
+      Another cause of some small headache was creating smaller child objects
       for the carts, instead of adding the actual original product object.
-      I though since it was to be stored in the session I should make the
+      I thought since the cart was to be stored in the session I should make the
       objects as small as possible, but now I believe this was just premature
       optimization.
 
-      - move code into directives
+      Otherwise I am very happy with the functionality I achieved.  I think its
+      funny that I was initially so pleased with the square grid responsive design,
+      but after implementing filtering I realized how strange it looked to have
+      a large screen with only two items displayed.  This would have required
+      a complete redesign so I just left it as is.
+
     </template>
 
 
