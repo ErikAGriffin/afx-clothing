@@ -76,12 +76,12 @@
 
     self.canAdd = function(product) {
       var color = product.activeColor;
-      if (product.isInCart) {return false;}
+      if (product.isInCart[color]) {return false;}
       return (product.stock[color] > 0);
     };
 
     self.addToCart = function(product) {
-      product.isInCart = true;
+      product.isInCart[product.activeColor] = true;
       var cartObject = {
         productID: product.productID,
         color: product.activeColor,
@@ -101,7 +101,7 @@
         var colorSame = cartProduct.color === product.activeColor;
         if (idSame && colorSame) {
           $cart.removeFromCart(self.cart.splice(index,1).pop());
-          product.isInCart = false;
+          product.isInCart[product.activeColor] = false;
           break;
         }
       }
@@ -113,6 +113,8 @@
       for (var i=0;i<productsArray.length;i++) {
         var product = productsArray[i];
         product.activeColor = product.colors[0];
+        product.isInCart = {};
+        product.isInCart[product.activeColor] = false;
       }
     };
 

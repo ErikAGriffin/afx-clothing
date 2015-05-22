@@ -99,7 +99,7 @@ main {
   /*height: calc(100% - 3.8em);*/
 }
 
-.product-box * {
+.product-box h3, .box-left, .box-right {
   -webkit-transition: all 200ms ease-in;
   -moz-transition: all 200ms ease-in;
   -ms-transition: all 200ms ease-in;
