@@ -15,7 +15,6 @@
     <script type="text/javascript" src="components/angular-animate/angular-animate.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script tpye="text/javascript" src="js/services.js"></script>
-    <!-- <script type="text/javascript" src="js/fetch.js"></script> -->
   </head>
   <body ng-controller="ProductsController as productsCtrl">
 
@@ -42,14 +41,17 @@
 
 
       <header class="pure-g"  ng-mouseleave="productsCtrl.hoverClear()">
-        <div class="pure-u-1 pure-u-sm-1-3" ng-mouseenter="productsCtrl.hoverClear()">
+        <div class="left-header pure-u-1 pure-u-sm-1-3" ng-mouseenter="productsCtrl.hoverClear()">
           <a ng-click="productsCtrl.resetFilter()">
             <img class="pure-img" src="images/logo.png" />
           </a>
+          <!-- Mini Cart Header -->
+          <section ng-show="productsCtrl.isCartShowing">&nbsp;</section>
           <section ng-class="{'shopping-cart':productsCtrl.isCartShowing}">
             <a ng-click="productsCtrl.showCart()">
               Shopping Cart <span class="count">{{productsCtrl.cart.length}}</span>
             </a>
+            <!-- Modular Shopping Cart -->
             <section ng-show="productsCtrl.isCartShowing">
               <a class="close-cart delete" ng-click="productsCtrl.hideCart()">X</a>
               <article class="pure-g" ng-repeat="product in productsCtrl.cart">
@@ -69,7 +71,7 @@
                   <a>Remove</a>
                 </span>
               </article>
-              <section class="checkout">
+              <article class="checkout">
                 <p>
                   Coupon Code: <input type="text" />
                 </p>
@@ -77,11 +79,12 @@
                   {{12.33|currency:"&pound;"}}
                 </p>
                 <a ng-click>Checkout</a>
-              </section>
-            </section>
-          </section>
-        </div>
-        <div class="pure-u-1 pure-u-sm-2-3">
+              </article>
+            </section>  <!-- end modular shopping cart -->
+          </section> <!-- end mini-cart -->
+        </div> <!-- end left-header -->
+        <div class="right-header pure-u-1 pure-u-sm-2-3">
+          <!-- Primary Menu -->
           <nav class="pure-g">
             <li class="pure-u-1 pure-u-sm-1-2">
               <a ng-click="productsCtrl.filterByMen()" ng-mouseenter="productsCtrl.hoverMen()">
@@ -94,6 +97,7 @@
               </a>
             </li>
           </nav>
+          <!-- Secondary Options -->
           <ul class="pure-g categories" ng-show="productsCtrl.showMenOptions">
             <li  ng-class="{'on':productsCtrl.showMenOptions}" class="pure-u-1 pure-u-sm-1-3">
               <a ng-click="productsCtrl.filterByMen('Footwear')">Footwear</a>
