@@ -120,7 +120,7 @@
         var colorSame = cartProduct.color === color;
         if (idSame && colorSame) {
           $cart.removeFromCart(self.cart.splice(index,1).pop());
-          product.isInCart[color] = false;
+          findProduct(product).isInCart[product.color] = false;
           break;
         }
       }
@@ -154,22 +154,10 @@
 
     // --- Fetching All Products ---
 
-    var checkColors = function(product,color) {
-      var returnColor;
-      for (var i=0;i<product.colors.length;i++) {
-        if (product.colors[i] === color) {
-
-        }
-          // AHHHH so close.
-      }
-    };
-
     var findProduct = function(newItem) {
-      console.log(newItem);
       var result = self.products.filter(function(productObject) {
         return productObject.productID === newItem.productID;
       });
-      console.log(result[0]);
       return result[0];
     };
 
