@@ -1,0 +1,29 @@
+<section ng-show="productsCtrl.isCartShowing">
+  <a class="close-cart delete" ng-click="productsCtrl.hideCart()">X</a>
+  <article class="pure-g" ng-repeat="product in productsCtrl.cart">
+    <span class="pure-u-1-2">
+      {{product.name}}
+      {{product.color}}
+    </span>
+    <span class="pure-u-1-6">
+      {{product.price | currency:"&pound;"}}
+    </span>
+    <span class="pure-u-1-6 quantity">
+      <a ng-click="productsCtrl.decrementQuantity(product)">-</a>
+      {{product.quantity}}
+      <a ng-click="productsCtrl.incrementQuantity(product)">+</a>
+    </span>
+    <span class="pure-u-1-6 delete">
+      <a ng-click="productsCtrl.removeFromCart(product)">Remove</a>
+    </span>
+  </article>
+  <article class="checkout">
+    <p>
+      Coupon Code: <input type="text" />
+    </p>
+    <p class="total">
+      {{productsCtrl.totalCost()|currency:"&pound;"}}
+    </p>
+    <a ng-click>Checkout</a>
+  </article>
+</section>  <!-- end modular shopping cart -->

@@ -1,0 +1,28 @@
+<div class="product-box">
+  <h3>{{product.name}}</h3>
+  <div class="product-content" ng-show="productsCtrl.showByColor(product,color)" ng-repeat="color in product.colors">
+    <div class="box-left">
+      <img ng-src="{{product.productThumbs[color]}}" />
+    </div>
+    <div class="box-right">
+      <p>
+        <span ng-class="{discounted:product.discount[color]}">
+          {{product.price | currency:"&pound;"}}
+        </span>
+        <span ng-show="product.discount[color]">
+          {{product.price - product.discount[color] | currency:"&pound;"}}
+        </span>
+        <span ng-hide="product.discount[color]">&nbsp;</span>
+      </p>
+      <p>
+        <span>Color:</span>
+        <a ng-repeat="color in product.colors" class="color-thumb" ng-click="productsCtrl.activateColor(product,color)" title="{{color}}" ng-style="{'background':product.colorThumbs[color]}"></a>
+      </p>
+      <span class="cart-add" ng-show="product.activeColor===color">
+        <a ng-show="product.isInCart[color]" ng-click="productsCtrl.removeFromCart(product)">Remove from cart</a>
+        <a ng-hide="product.isInCart[color] || productsCtrl.canAdd(product)" class="out-of-stock">Out of Stock</a>
+        <a ng-show="productsCtrl.canAdd(product)" ng-click="productsCtrl.addToCart(product)">Add to cart</a>
+      </span>
+    </div> <!-- .box-right -->
+  </div> <!-- .product-content -->
+</div> <!-- .product-box -->
