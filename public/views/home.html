@@ -46,9 +46,32 @@
           <a ng-click="productsCtrl.resetFilter()">
             <img class="pure-img" src="images/logo.png" />
           </a>
-          <section>
+          <div class="shopping-cart">
             Shopping Cart <span class="count">{{productsCtrl.cart.length}}</span>
-          </section>
+            <section ng-show="true">
+              <article class="pure-g" ng-repeat="product in productsCtrl.cart">
+                <span class="pure-u-3-4">
+                  {{product.name}}
+                  {{product.color}}
+                  {{product.price | currency:"&pound;"}}
+                </span>
+                <span class="pure-u-1-4 quantity">
+                  <a ng-click>-</a>
+                  {{product.quantity}}
+                  <a ng-click>+</a>
+                </span>
+              </article>
+              <section>
+                <p>
+                  Coupon Code: <input type="text" />
+                </p>
+                <p class="total">
+                  12.33
+                </p>
+                <a ng-click>Checkout</a>
+              </section>
+            </section>
+          </div>
         </div>
         <div class="pure-u-1 pure-u-sm-2-3">
           <nav class="pure-g">

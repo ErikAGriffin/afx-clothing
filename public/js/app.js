@@ -81,10 +81,14 @@
     };
 
     self.addToCart = function(product) {
-      product.isInCart[product.activeColor] = true;
+      var color = product.activeColor;
+      product.isInCart[color] = true;
       var cartObject = {
         productID: product.productID,
-        color: product.activeColor,
+        name: product.name,
+        color: color,
+        price: product.price-product.discount[color],
+        stock: product.stock[color],
         quantity: 1
       };
       self.cart.push(cartObject);
