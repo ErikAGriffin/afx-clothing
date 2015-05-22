@@ -106,7 +106,6 @@
       self.cart.push(cartObject);
       // Send to server.
       $cart.addToCart(cartObject);
-      console.log(self.cart);
     };
 
     self.removeFromCart = function(product) {

@@ -23,8 +23,8 @@
 
       There are a few initial design choices I regret.
 
-      The first is deciding that products of different colors
-      are not unique,
+      The first is deciding that to give products IDs regardless
+      of color, instead of a different UUID for every possible product,
       and the second is mocking my data in an array instead of
       a hash with product id's as keys.
 
@@ -32,10 +32,12 @@
       (O n^2) as well as the pain of having to constantly consider
       color when dealing with objects.
 
-      Instead of setting quantity from main page, you will simply either
-      add or a remove an item.
+      Another cause of some headache was creating smaller child objects
+      for the carts, instead of adding the actual original product object.
+      I though since it was to be stored in the session I should make the
+      objects as small as possible, but now I believe this was just premature
+      optimization.
 
-      - Add shopping cart quantity functions.
       - move code into directives
     </template>
 

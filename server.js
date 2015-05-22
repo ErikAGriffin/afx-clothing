@@ -52,21 +52,21 @@
     var cart = req.session.userCart;
     var newItem = req.body;
     cartHelper.addIfUnique(cart,newItem);
-    res.end();
+    res.json({});
   });
 
   app.post('/removefromcart', function(req,res) {
     var cart = req.session.userCart;
     var newItem = req.body;
     cartHelper.removeFromCart(cart,newItem);
-    res.end();
+    res.json({});
   });
 
   app.post('/updateQuantity', function(req,res) {
     var cart = req.session.userCart;
     var newItem = req.body;
     cartHelper.updateQuantity(cart, newItem);
-    res.end();
+    res.json({});
   });
 
 
