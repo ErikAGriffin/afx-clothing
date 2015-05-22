@@ -34,9 +34,8 @@
       Instead of setting quantity from main page, you will simply either
       add or a remove an item.
 
-      - Change initial fetch of products to also fetch user cart.
-      - Add shopping cart to html.
       - Add shopping cart quantity functions.
+      - move code into directives
     </template>
 
 
@@ -46,7 +45,7 @@
             <img class="pure-img" src="images/logo.png" />
           </a>
           <!-- Mini Cart Header -->
-          <section ng-show="productsCtrl.isCartShowing">&nbsp;</section>
+          <section ng-show="productsCtrl.isCartShowing" ng-mouseup="productsCtrl.hideCart()">&nbsp;</section>
           <section ng-class="{'shopping-cart':productsCtrl.isCartShowing}">
             <a ng-click="productsCtrl.showCart()">
               Shopping Cart <span class="count">{{productsCtrl.cart.length}}</span>
@@ -68,7 +67,7 @@
                   <a ng-click>+</a>
                 </span>
                 <span class="pure-u-1-6 delete">
-                  <a>Remove</a>
+                  <a ng-click="productsCtrl.removeFromCart(product)">Remove</a>
                 </span>
               </article>
               <article class="checkout">
@@ -76,15 +75,15 @@
                   Coupon Code: <input type="text" />
                 </p>
                 <p class="total">
-                  {{12.33|currency:"&pound;"}}
+                  {{productsCtrl.totalCost()|currency:"&pound;"}}
                 </p>
                 <a ng-click>Checkout</a>
               </article>
             </section>  <!-- end modular shopping cart -->
           </section> <!-- end mini-cart -->
         </div> <!-- end left-header -->
-        <div class="right-header pure-u-1 pure-u-sm-2-3">
-          <!-- Primary Menu -->
+        <!-- Primary Menu -->
+        <div class="right-header pure-u-1 pure-u-sm-2-3" ng-mouseup="productsCtrl.hideCart()">
           <nav class="pure-g">
             <li class="pure-u-1 pure-u-sm-1-2">
               <a ng-click="productsCtrl.filterByMen()" ng-mouseenter="productsCtrl.hoverMen()">

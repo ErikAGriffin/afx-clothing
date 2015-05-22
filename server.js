@@ -35,10 +35,16 @@
     res.sendFile(views+'home.html');
   });
 
-  app.post('/products', function(req, res) {
+  app.post('/data', function(req, res) {
+    var cart = req.session.userCart;
     fs.readFile('./products.json','utf-8', function(err,data) {
       if (err) {console.log('err fetching products\n'+err);}
-      res.json(JSON.parse(data));
+      var dataObject = {
+        products: JSON.parse(data),
+        cart: cart,
+        coupons: {}
+      };
+      res.json(dataObject);
     });
   });
 

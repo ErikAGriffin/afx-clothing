@@ -110,15 +110,27 @@
     self.removeFromCart = function(product) {
       // Array.find() not widely supported.
       for (var index=0;index<self.cart.length;index++) {
+        var color;
+        if (product.color) {color= product.color;}
+        else {color = product.activeColor;}
         var cartProduct = self.cart[index];
         var idSame = cartProduct.productID === product.productID;
-        var colorSame = cartProduct.color === product.activeColor;
+        var colorSame = cartProduct.color === color;
         if (idSame && colorSame) {
           $cart.removeFromCart(self.cart.splice(index,1).pop());
           product.isInCart[product.activeColor] = false;
           break;
         }
       }
+    };
+
+    self.totalCost = function() {
+      var total = 0;
+      for (var i=0;i<self.cart.length;i++) {
+        var cartObject = self.cart[i];
+        total = total + cartObject.price * cartObject.quantity;
+      }
+      return total;
     };
 
     // --- Fetching All Products ---
@@ -133,8 +145,9 @@
     };
 
     // make service?
-    $http.post('/products').success(function(data,status) {
-      self.products = data;
+    $http.post('/data').success(function(data,status) {
+      self.products = data.products;
+      self.cart = data.cart;
       setActiveColor(self.products);
       console.log(self.products);
     })
