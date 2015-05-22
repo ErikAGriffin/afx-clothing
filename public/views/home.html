@@ -50,23 +50,28 @@
             Shopping Cart <span class="count">{{productsCtrl.cart.length}}</span>
             <section ng-show="true">
               <article class="pure-g" ng-repeat="product in productsCtrl.cart">
-                <span class="pure-u-3-4">
+                <span class="pure-u-1-2">
                   {{product.name}}
                   {{product.color}}
+                </span>
+                <span class="pure-u-1-6">
                   {{product.price | currency:"&pound;"}}
                 </span>
-                <span class="pure-u-1-4 quantity">
+                <span class="pure-u-1-6 quantity">
                   <a ng-click>-</a>
                   {{product.quantity}}
                   <a ng-click>+</a>
                 </span>
+                <span class="pure-u-1-6 delete">
+                  <a>Remove</a>
+                </span>
               </article>
-              <section>
+              <section class="checkout">
                 <p>
                   Coupon Code: <input type="text" />
                 </p>
                 <p class="total">
-                  12.33
+                  {{12.33|currency:"&pound;"}}
                 </p>
                 <a ng-click>Checkout</a>
               </section>

@@ -228,12 +228,25 @@ main {
   padding: 0.1em;
 }
 
-.quantity a:last-child {
+.delete {
+  text-align: right;
+  font-size: 1.1em;
+}
+
+.delete:hover{
+  color:red;
+}
+
+.delete a:last-child {
   margin-right:1.5em;
 }
 
-@media screen and (min-width: 48em) {
+.shopping-cart .checkout {
+  text-align:right;
+}
+
+@media screen and (min-width: 64em) {
   .shopping-cart {
-    width: 30em;
+    width: 40em;
   }
 }
