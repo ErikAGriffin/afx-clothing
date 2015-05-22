@@ -62,6 +62,13 @@
     res.end();
   });
 
+  app.post('/updateQuantity', function(req,res) {
+    var cart = req.session.userCart;
+    var newItem = req.body;
+    cartHelper.updateQuantity(cart, newItem);
+    res.end();
+  });
+
 
 
 

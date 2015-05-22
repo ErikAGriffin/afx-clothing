@@ -90,6 +90,8 @@
       return (product.stock[color] > 0);
     };
 
+    // -- Add and Remove Items --
+
     self.addToCart = function(product) {
       var color = product.activeColor;
       product.isInCart[color] = true;
@@ -118,10 +120,27 @@
         var colorSame = cartProduct.color === color;
         if (idSame && colorSame) {
           $cart.removeFromCart(self.cart.splice(index,1).pop());
-          product.isInCart[product.activeColor] = false;
+          product.isInCart[color] = false;
           break;
         }
       }
+    };
+
+    // -- Change Quantity --
+
+    self.incrementQuantity = function(product) {
+      if (product.quantity < product.stock) {
+        product.quantity++;
+        $cart.updateQuantity(product);
+      }
+    };
+
+    self.decrementQuantity = function(product) {
+      if(product.quantity > 0) {
+        product.quantity--;
+        $cart.updateQuantity(product);
+      }
+      else {self.removeFromCart(product);}
     };
 
     self.totalCost = function() {
@@ -135,12 +154,35 @@
 
     // --- Fetching All Products ---
 
-    var setActiveColor = function(productsArray) {
+    var checkColors = function(product,color) {
+      var returnColor;
+      for (var i=0;i<product.colors.length;i++) {
+        if (product.colors[i] === color) {
+
+        }
+          // AHHHH so close.
+      }
+    };
+
+    var findProduct = function(newItem) {
+      console.log(newItem);
+      var result = self.products.filter(function(productObject) {
+        return productObject.productID === newItem.productID;
+      });
+      console.log(result[0]);
+      return result[0];
+    };
+
+    var orientData = function(cartArray, productsArray) {
       for (var i=0;i<productsArray.length;i++) {
         var product = productsArray[i];
         product.activeColor = product.colors[0];
         product.isInCart = {};
         product.isInCart[product.activeColor] = false;
+      }
+      for (var j=0;j<cartArray.length;j++) {
+        var result = findProduct(cartArray[j]);
+        result.isInCart[cartArray[j].color] = true;
       }
     };
 
@@ -148,8 +190,7 @@
     $http.post('/data').success(function(data,status) {
       self.products = data.products;
       self.cart = data.cart;
-      setActiveColor(self.products);
-      console.log(self.products);
+      orientData(self.cart, self.products);
     })
     .error(function(){
       console.log('error fetching products');

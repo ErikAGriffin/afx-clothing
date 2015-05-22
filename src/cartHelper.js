@@ -1,12 +1,17 @@
 (function() {
 
-  var addIfUnique = function(userCart, newItem) {
-    var result = userCart.filter(function(product) {
-      var idSame = product.productID === newItem.productID;
-      var colorSame = product.color === newItem.color;
+  var findProduct = function(userCart, newItem) {
+    var result = userCart.filter(function(cartObject) {
+      var idSame = cartObject.productID === newItem.productID;
+      var colorSame = cartObject.color === newItem.color;
       return (idSame && colorSame);
     });
-    if (!result[0]) {userCart.push(newItem);}
+    return result[0];
+  };
+
+  var addIfUnique = function(userCart, newItem) {
+    var result = findProduct(userCart, newItem);
+    if (!result) {userCart.push(newItem);}
   };
 
   var removeFromCart = function(userCart, newItem) {
@@ -22,6 +27,13 @@
     }
   };
 
+  var updateQuantity = function(userCart, newItem) {
+    var result = findProduct(userCart, newItem);
+    result.quantity = newItem.quantity;
+  };
+
+
+  module.exports.updateQuantity = updateQuantity;
   module.exports.addIfUnique = addIfUnique;
   module.exports.removeFromCart = removeFromCart;
 

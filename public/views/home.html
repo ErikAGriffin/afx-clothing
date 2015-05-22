@@ -21,15 +21,16 @@
     <template>
       Notes.
 
-      To add animation to clothing options on gender hover,
-      I could add and remove a class that animates opacity.
+      There are a few initial design choices I regret.
 
-      I will have to methods, one to add a new item to cart,
-      and another to simply update quantity.
-      Angular will use the stock to determine where and items
-      quantity can be updated, or it can be added to the cart
-      in the first place. However the server will have some
-      error checking in place as well.
+      The first is deciding that products of different colors
+      are not unique,
+      and the second is mocking my data in an array instead of
+      a hash with product id's as keys.
+
+      The combination of these two flaws led to nested loops
+      (O n^2) as well as the pain of having to constantly consider
+      color when dealing with objects.
 
       Instead of setting quantity from main page, you will simply either
       add or a remove an item.
@@ -62,9 +63,9 @@
                   {{product.price | currency:"&pound;"}}
                 </span>
                 <span class="pure-u-1-6 quantity">
-                  <a ng-click>-</a>
+                  <a ng-click="productsCtrl.decrementQuantity(product)">-</a>
                   {{product.quantity}}
-                  <a ng-click>+</a>
+                  <a ng-click="productsCtrl.incrementQuantity(product)">+</a>
                 </span>
                 <span class="pure-u-1-6 delete">
                   <a ng-click="productsCtrl.removeFromCart(product)">Remove</a>
