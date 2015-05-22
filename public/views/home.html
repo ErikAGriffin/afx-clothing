@@ -36,17 +36,10 @@
       add or a remove an item.
 
       - Change initial fetch of products to also fetch user cart.
-      - Animate gender hover.
       - Add shopping cart to html.
       - Add shopping cart quantity functions.
     </template>
 
-
-    Hello.
-    <div ng-class="{on:onOff}" class="highlight">
-      Highlight this box
-    </div>
-    <button ng-click="onOff=!onOff">Toggle</button>
 
       <header class="pure-g"  ng-mouseleave="productsCtrl.hoverClear()">
         <div class="pure-u-1 pure-u-sm-1-3" ng-mouseenter="productsCtrl.hoverClear()">
@@ -71,24 +64,24 @@
             </li>
           </nav>
           <ul class="pure-g categories" ng-show="productsCtrl.showMenOptions">
-            <li class="pure-u-1 pure-u-sm-1-3">
+            <li  ng-class="{'on':productsCtrl.showMenOptions}" class="pure-u-1 pure-u-sm-1-3">
               <a ng-click="productsCtrl.filterByMen('Footwear')">Footwear</a>
             </li>
-            <li class="pure-u-1 pure-u-sm-1-3">
+            <li  ng-class="{'on':productsCtrl.showMenOptions}" class="pure-u-1 pure-u-sm-1-3">
               <a ng-click="productsCtrl.filterByMen('Formalwear')">Formal</a>
             </li>
-            <li class="pure-u-1 pure-u-sm-1-3">
+            <li  ng-class="{'on':productsCtrl.showMenOptions}" class="pure-u-1 pure-u-sm-1-3">
               <a ng-click="productsCtrl.filterByMen('Casualwear')">Casual</a>
             </li>
           </ul>
           <ul class="pure-g categories" ng-show="productsCtrl.showWomenOptions">
-            <li class="pure-u-1 pure-u-sm-1-3">
+            <li  ng-class="{'on':productsCtrl.showWomenOptions}" class="pure-u-1 pure-u-sm-1-3">
               <a ng-click="productsCtrl.filterByWomen('Footwear')">Footwear</a>
             </li>
-            <li class="pure-u-1 pure-u-sm-1-3">
+            <li  ng-class="{'on':productsCtrl.showWomenOptions}" class="pure-u-1 pure-u-sm-1-3">
               <a ng-click="productsCtrl.filterByWomen('Formalwear')">Formal</a>
             </li>
-            <li class="pure-u-1 pure-u-sm-1-3">
+            <li  ng-class="{'on':productsCtrl.showWomenOptions}" class="pure-u-1 pure-u-sm-1-3">
               <a ng-click="productsCtrl.filterByWomen('Casualwear')">Casual</a>
             </li>
           </ul>
