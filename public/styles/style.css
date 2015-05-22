@@ -4,7 +4,7 @@
 }
 
 body {
-  background:#1f1f1f;
+  /*background:#1f1f1f;*/
 }
 
 a[ng-click] {
@@ -17,7 +17,11 @@ div .pure-img {
 
 header section {
   font-weight: bold;
-  padding: 0.4em;
+  padding: 0.9em;
+}
+
+.pure-g [class *= "pure-u"] section > a {
+  font-family: sans-serif;
 }
 
 .count {
@@ -78,6 +82,10 @@ main {
 }
 
 /* Square Grid */
+.fade {
+  opacity:0.3;
+}
+
 .product-row li {
   display: inline-block;
   position:relative;
@@ -90,7 +98,6 @@ main {
 }
 
 .product-box {
-  opacity:0.2;
   position: absolute;
   top: 0;
   right: 0;
@@ -118,7 +125,7 @@ main {
   background:black;
   margin:0;
   padding: 0.5em;
-  opacity: 100;
+  opacity: 1;
   height: 2em;
 }
 
@@ -195,6 +202,7 @@ main {
 }
 
 /* Shopping Cart */
+
 .shopping-cart {
   background:white;
   border: 0.5em solid grey;
@@ -208,6 +216,12 @@ main {
   top: 10em;
   left:0;
   right:0;
+}
+
+.close-cart {
+  position: absolute;
+  top: 1em;
+  right:1em;
 }
 
 .shopping-cart section {

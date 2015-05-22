@@ -74,6 +74,16 @@
 
     // --- Shopping Cart ---
 
+    self.isCartShowing = false;
+
+    self.showCart = function() {
+      self.isCartShowing = true;
+    };
+
+    self.hideCart = function() {
+      self.isCartShowing = false;
+    };
+
     self.canAdd = function(product) {
       var color = product.activeColor;
       if (product.isInCart[color]) {return false;}
