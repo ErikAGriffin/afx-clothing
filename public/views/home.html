@@ -27,21 +27,20 @@
       create specialized animations than to use CSS trickery, and would have
       influenced the core structure of my html.
 
-      In the end, I think the product boxes are too busy but I learned how
-      much easier to get custom animations would have been if I had started with
-      ngAnimate.
+      In the end, I think the product boxes are too busy but it was fun toying
+      with the idea.
 
       There are also a few initial design choices I regret.
 
-      The first is deciding that color is independent of productID,
-      that is instead of a different UUID for every possible product,
-      each name is unique and may have multiple colors.
+      The first is deciding that color is independent of productID;
+      that is that instead of a different UUID for every possible product,
+      each product is unique only by name and may have multiple colors.
       The second is mocking my data in an array instead of
       a hash with product id's as keys.
 
-      The combination of these two flaws led to nested loops
+      These two flaws led to a few nested loops
       (O n^2) as well as the pain of having to constantly consider
-      which to use color when dealing with objects.
+      which color to use when dealing with objects.
 
       Another cause of some small headache was creating smaller child objects
       for the carts, instead of adding the actual original product object.

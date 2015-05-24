@@ -119,7 +119,7 @@
         var colorSame = cartProduct.color === color;
         if (idSame && colorSame) {
           $cart.removeFromCart(self.cart.splice(index,1).pop());
-          findProduct(product).isInCart[product.color] = false;
+          findProduct(product).isInCart[color] = false;
           break;
         }
       }
