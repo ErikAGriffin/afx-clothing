@@ -19,44 +19,6 @@
   </head>
   <body ng-controller="ProductsController as productsCtrl">
 
-    <template>
-      Notes.
-
-      For me this was an exploration into some css animations, and eventually
-      ngAnimate.  Looking back it is much easier to use angular-animate to
-      create specialized animations than to use CSS trickery, and would have
-      influenced the core structure of my html.
-
-      In the end, I think the product boxes are too busy but it was fun toying
-      with the idea.
-
-      There are also a few initial design choices I regret.
-
-      The first is deciding that color is independent of productID;
-      that is that instead of a different UUID for every possible product,
-      each product is unique only by name and may have multiple colors.
-      The second is mocking my data in an array instead of
-      a hash with product id's as keys.
-
-      These two flaws led to a few nested loops
-      (O n^2) as well as the pain of having to constantly consider
-      which color to use when dealing with objects.
-
-      Another cause of some small headache was creating smaller child objects
-      for the carts, instead of adding the actual original product object.
-      I thought since the cart was to be stored in the session I should make the
-      objects as small as possible, but now I believe this was just premature
-      optimization.
-
-      Otherwise I am very happy with the functionality I achieved.  I think its
-      funny that I was initially so pleased with the square grid responsive design,
-      but after implementing filtering I realized how strange it looked to have
-      a large screen with only two items displayed.  This would have required
-      a complete redesign so I just left it as is.
-
-    </template>
-
-
       <header class="pure-g"  ng-mouseleave="productsCtrl.hoverClear()">
         <div class="left-header pure-u-1 pure-u-sm-1-3" ng-mouseenter="productsCtrl.hoverClear()">
           <a ng-click="productsCtrl.resetFilter()">
