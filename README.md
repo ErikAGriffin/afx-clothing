@@ -49,7 +49,7 @@ In the <b>/public</b> directory is the HTML, CSS, and Angular.js code of the web
 The HTML can be found in the <b>/public/views</b> directory, with the partials of Angular directives in that subfolder.
 The CSS is found in <b>/public/styles/style.css</b>, the Angular in <b>/public/js/</b>.
 
-<b>Addional Notes.</b>
+<h2>Addional Notes.</h2>
 
 For me this was an exploration into some css animations, and eventually
 ngAnimate.  Looking back it is much easier to use angular-animate to
